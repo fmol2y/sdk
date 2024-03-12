@@ -4,7 +4,7 @@ import {
   EvmParachain,
   Parachain,
 } from '@moonbeam-network/xcm-types';
-import { polkadot } from '@moonbeam-network/xcm-config';
+import { polkadot, kusama } from '@moonbeam-network/xcm-config';
 
 import {
   aca,
@@ -18,6 +18,7 @@ import {
   hdx,
   ibtc,
   intr,
+  ksm,
   nodl,
   sub,
   unq,
@@ -99,6 +100,31 @@ export const assetHub = new Parachain({
   parachainId: 1000,
   ss58Format: 42,
   ws: 'wss://polkadot-asset-hub-rpc.polkadot.io',
+});
+
+
+export const kusamaAssetHub = new Parachain({
+  assetsData: [
+    {
+      asset: usdt,
+      decimals: 6,
+      id: 19840,
+      palletInstance: 50,
+    },
+    {
+      asset: ksm,
+      decimals: 12,
+      id: 0,
+    },
+  ],
+  ecosystem: Ecosystem.Kusama,
+  genesisHash:
+    '0x48239ef607d7928874027a43a67689209727dfb3d3dc5e5b03a39bdc2eda771a',
+  key: 'kusama-assethub',
+  name: 'Kusama Asset Hub',
+  parachainId: 1000,
+  ss58Format: 2,
+  ws: 'wss://kusama-asset-hub-rpc.polkadot.io',
 });
 
 export const astar = new Parachain({
@@ -558,6 +584,8 @@ export const chains: AnyChain[] = [
   crust,
   hydraDX,
   interlay,
+  kusama,
+  kusamaAssetHub,
   moonbeam,
   nodle,
   phala,

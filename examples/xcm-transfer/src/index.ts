@@ -22,9 +22,9 @@ const wallet: Wallet = new Wallet({
 });
 
 // Define transfer
-const asset = configService.getAsset('hdx');
-const srcChain = configService.getChain('moonbeam');
-const destChain = configService.getChain('hydradx');
+const asset = configService.getAsset('dot');
+const srcChain = configService.getChain('polkadot');
+const destChain = configService.getChain('assethub');
 
 const configBuilder = ConfigBuilder(configService);
 const { sourceChains } = configBuilder.assets().asset(asset);
@@ -48,8 +48,8 @@ const [_srcApi, _dstApi] = await Promise.all([
 console.timeEnd('connection');
 
 // Define source & dest accounts
-const srcAddr = 'INSERT_ADDRESS';
-const destAddr = 'INSERT_ADDRESS';
+const srcAddr = '1sDPTnSx6D5z2U22qEdvSAymqxuHE6Ysw1LpftGvuU99H3T';
+const destAddr = '1sDPTnSx6D5z2U22qEdvSAymqxuHE6Ysw1LpftGvuU99H3T';
 
 // Subscribe source chain token balance
 const balanceObserver = (balances: AssetAmount[]) => console.log(balances);

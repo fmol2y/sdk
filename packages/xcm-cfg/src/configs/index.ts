@@ -7,6 +7,8 @@ import { bifrostConfig } from './bifrost';
 import { centrifugeConfig } from './centrifuge';
 import { hydraDxConfig } from './hydraDX';
 import { interlayConfig } from './interlay';
+import { kusamaConfig } from './kusama';
+import { kusamaAssetHubConfig } from './kusama-assethub';
 import { moonbeamConfig } from './moonbeam';
 import { nodleConfig } from './nodle';
 import { polkadotConfig } from './polkadot';
@@ -24,6 +26,8 @@ export const chainsConfig: ChainConfig[] = [
   centrifugeConfig,
   hydraDxConfig,
   interlayConfig,
+  kusamaConfig,
+  kusamaAssetHubConfig,
   moonbeamConfig,
   nodleConfig,
   polkadotConfig,

@@ -1,5 +1,48 @@
 import { defineChain } from 'viem';
 
+export const polkadot = defineChain({
+  id: 0,
+  name: 'Polkadot',
+  network: 'polkadot',
+  nativeCurrency: {
+    decimals: 10,
+    name: 'DOT',
+    symbol: 'DOT',
+  },
+  rpcUrls: {
+    public: {
+      http: ['https://rpc.polkadot.io'],
+      webSocket: ['wss://rpc.polkadot.io'],
+    },
+    default: {
+      http: ['https://rpc.polkadot.io'],
+      webSocket: ['wss://rpc.polkadot.io'],
+    },
+  },
+  testnet: false,
+});
+
+export const assetHub = defineChain({
+  id: 1000,
+  name: 'AssetHub',
+  network: 'polkadot',
+  nativeCurrency: {
+    decimals: 10,
+    name: 'DOT',
+    symbol: 'DOT',
+  },
+  rpcUrls: {
+    public: {
+      http: ['https://statemint.api.onfinality.io/public'],
+      webSocket: ['wss://polkadot-asset-hub-rpc.polkadot.io'],
+    },
+    default: {
+      http: ['https://statemint.api.onfinality.io/public'],
+      webSocket: ['wss://polkadot-asset-hub-rpc.polkadot.io'],
+    },
+  },
+  testnet: false,
+});
 export const hydradx = defineChain({
   id: 222222,
   name: 'HydraDX',
